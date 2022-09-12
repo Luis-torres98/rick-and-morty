@@ -2,9 +2,28 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
+## Installation
+
+---
+
+$ git clone https://example.com
+$ cd ../path/to/the/file
+$ npm install
+$ npm run serve
+
 ## Development server
 
 Run `npm run serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Technologies
+
+---
+
+A list of technologies used within the project:
+
+-   [PUG] : Version 3.0.2
+-   [RXJS]: Version 7.5.0
+-   [NPM RUN ALL]: Version 4.1.5
 
 ## Code scaffolding
 
