@@ -1,0 +1,22 @@
+.detail-character {
+	.container__info {
+		display: flex;
+		gap: 25px;
+		margin-top: 50px;
+		img,
+		.container__detail {
+			width: 50%;
+			height: fit-content;
+			p {
+				font-size: 18px;
+			}
+			ul {
+				padding: 0;
+				li {
+					margin-left: 25px;
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+}

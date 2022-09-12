@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+	box-sizing: border-box;
+	font-family: 'Outfit';
+}
+body {
+	margin: 0;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+h1,
+p {
+	margin: 0;
+}
+
+.container__primary {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.click {
+	cursor: pointer;
+}
+
+.container__header {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	i {
+		background-color: rgb(212, 212, 212);
+		padding: 10px;
+		border-radius: 50%;
+		font-size: 25px;
+		cursor: pointer;
+	}
+}

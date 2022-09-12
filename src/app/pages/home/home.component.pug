@@ -1,0 +1,16 @@
+.home__container 
+	h1 List Characters 
+	.container__cards
+
+		.character__card(*ngFor="let character of listCharacters") 
+			.favorite__character.click
+				<i class="fa-solid fa-star"></i>
+			img([src]="character.image", [alt]="character.name") 
+			p Name : {{ character.name }}
+			p Status : {{ character.status }}
+			p Species : {{ character.species  }}
+			p.click((click)="getIdLocation(character.location.url)") Location : {{ character.location.name }}
+			p.last Last Episode : {{ getLastEp(character.episode) }}
+
+			button((click)="navigate('/character/'+ character.id)")
+				p More detail

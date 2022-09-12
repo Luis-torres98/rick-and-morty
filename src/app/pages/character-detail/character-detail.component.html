@@ -1,0 +1,19 @@
+
+<div class="detail-character"> 
+  <div class="container__header"> <i class="fa-solid fa-arrow-left" (click)="navigate()"></i>
+    <h2>Character Detail </h2>
+  </div>
+  <div class="container__info"><img [src]="character?.image" [alt]="character?.name">
+    <div class="container__detail"> 
+      <p>Name: {{ character?.name }}</p>
+      <p>Status: {{ character?.status }}</p>
+      <p>Species: {{ character?.species }}</p>
+      <p>Gender: {{ character?.gender }}</p>
+      <p>Origin: {{ character?.origin?.name }}</p>
+      <p>Location: {{ character?.location?.name }}</p>
+      <ul>Appearance episodes: 
+        <li *ngFor="let episode of character?.episode">Episode number: {{ getLastEp(episode) }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

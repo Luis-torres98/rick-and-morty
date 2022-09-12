@@ -1,0 +1,7 @@
+.location__container
+	.container__header 
+		i.fa-solid.fa-arrow-left((click)="navigate('')")
+		h2 Location detail
+	p Type: {{ location?.type }}
+	p Dimension: {{ location?.dimension }}
+	p Residents: {{ location?.residents?.length }}

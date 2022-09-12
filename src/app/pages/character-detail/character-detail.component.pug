@@ -1,0 +1,15 @@
+.detail-character 
+	.container__header 
+		i.fa-solid.fa-arrow-left((click)="navigate()")
+		h2 Character Detail 
+	.container__info
+		img([src]="character?.image", [alt]="character?.name")
+		.container__detail 
+			p Name: {{ character?.name }}
+			p Status: {{ character?.status }}
+			p Species: {{ character?.species }}
+			p Gender: {{ character?.gender }}
+			p Origin: {{ character?.origin?.name }}
+			p Location: {{ character?.location?.name }}
+			ul Appearance episodes: 
+				li(*ngFor="let episode of character?.episode") Episode number: {{ getLastEp(episode) }}
