@@ -1,0 +1,20 @@
+
+<div class="favorites__container"> 
+  <div class="container__header"> <i class="fa-solid fa-arrow-left" (click)="navigate('')"></i>
+    <h2>Favorites Characters</h2>
+  </div>
+  <div class="container__cards" *ngIf="listCharacters.length  !== 0">
+    <div class="character__card" *ngFor="let character of listCharacters"> <img [src]="character.image" [alt]="character.name">
+      <p>Name : {{ character.name }}</p>
+      <p>Status : {{ character.status }}</p>
+      <p>Species : {{ character.species  }}</p>
+      <p class="click" (click)="getIdLocation(character.location.url)">Location : {{ character.location.name }}</p>
+      <p class="last">Last Episode : {{ getLastEp(character.episode) }}</p>
+      <button class="btn" (click)="navigate('/character/'+ character.id)">
+        <p>More detail</p>
+      </button>
+    </div>
+  </div>
+  <button class="btn" *ngIf="listCharacters.length  !== 0" (click)="deleteAllFav()">Delete All Favorites</button>
+  <div class="container__no__results" *ngIf="listCharacters.length  === 0"><img src="assets/no-results.png" alt="no results"></div>
+</div>

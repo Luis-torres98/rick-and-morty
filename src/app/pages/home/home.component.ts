@@ -10,6 +10,7 @@ import { ApiRickandmortyService } from '../../services/api-rickandmorty.service'
 })
 export class HomeComponent {
 	listCharacters: ICharacter[] = [];
+	favorite: ICharacter[] = [];
 	constructor(
 		private _rickAndMortySrv: ApiRickandmortyService,
 		private _router: Router
@@ -32,6 +33,22 @@ export class HomeComponent {
 		let idLoc = loc[loc.length - 1];
 
 		this.navigate(`/location/${idLoc}`);
+	}
+
+	addFavorite(character: ICharacter) {
+		let search = localStorage.getItem('character');
+
+		this.favorite = JSON.parse(search!) || [];
+
+		let result = this.favorite.find(
+			(fav: ICharacter) => character.id === fav.id
+		);
+
+		if (!result) {
+			this.favorite.push(character);
+
+			localStorage.setItem('character', JSON.stringify(this.favorite));
+		}
 	}
 
 	navigate(path: any) {

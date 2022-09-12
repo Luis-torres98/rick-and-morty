@@ -1,4 +1,4 @@
-.home__container {
+.favorites__container {
 	padding: 50px 0;
 	.header__container {
 		display: flex;
@@ -35,5 +35,12 @@
 				width: 200px;
 			}
 		}
+	}
+
+	.container__no__results {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 525px;
 	}
 }

@@ -1,12 +1,11 @@
-.home__container
-	.header__container
-		h1 List Characters 
-		button.btn((click)="navigate('favorites')")  View Favorite Characters
-	.container__cards
+.favorites__container 
+	.container__header 
+		i.fa-solid.fa-arrow-left((click)="navigate('')")
+		h2 Favorites Characters
 
+	.container__cards(*ngIf="listCharacters.length  !== 0")
 		.character__card(*ngFor="let character of listCharacters") 
-			.favorite__character.click((click)="addFavorite(character)")
-				<i class="fa-solid fa-star"></i>
+
 			img([src]="character.image", [alt]="character.name") 
 			p Name : {{ character.name }}
 			p Status : {{ character.status }}
@@ -16,3 +15,7 @@
 
 			button.btn((click)="navigate('/character/'+ character.id)")
 				p More detail
+	button.btn(*ngIf="listCharacters.length  !== 0" , (click)="deleteAllFav()") Delete All Favorites
+
+	.container__no__results(*ngIf="listCharacters.length  === 0")
+		img(src="assets/no-results.png", alt="no results")
